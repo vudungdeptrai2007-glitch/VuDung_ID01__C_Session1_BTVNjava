@@ -1,49 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Thư viện</title>
 </head>
 <body>
-    <script src="">
-        // 1. Nhập thông tin từ người dùng
-let rawBookName = prompt("Nhập tên sách:");
-let rawAuthor = prompt("Nhập tên tác giả:");
-let yearPublished = parseInt(prompt("Nhập năm xuất bản:"));
-let price = parseFloat(prompt("Nhập giá tiền một cuốn:"));
-let quantity = parseInt(prompt("Nhập số lượng nhập kho:"));
 
-// 2. Chuẩn hóa dữ liệu
-// Loại bỏ khoảng trắng 2 đầu và viết hoa
-let bookName = rawBookName.trim().toUpperCase(); 
-// Viết hoa tên tác giả
-let author = rawAuthor.toUpperCase(); 
+    <h1>Trang thư viện</h1>
 
-// 3. Tạo mã định danh (Book ID)
-// Lấy 3 ký tự đầu của tác giả, năm và số ngẫu nhiên (1-1000)
-let randomID = Math.floor(Math.random() * 1000) + 1;
-let bookID = `${author.substring(0, 3)}${yearPublished}-${randomID}`;
-
-// 4. Tính toán số liệu
-const CURRENT_YEAR = 2026;
-let bookAge = CURRENT_YEAR - yearPublished;
-let totalValue = price * quantity;
-
-// Tạo số ngăn kệ ngẫu nhiên (1-10)
-let shelfNumber = Math.floor(Math.random() * 10) + 1;
-
-// 5. In phiếu nhập kho ra Console
-console.log(`
---- PHIẾU NHẬP KHO ---
-Mã sách: ${bookID}
-Tên sách: ${bookName}
-Tác giả: ${author}
-Năm xuất bản: ${yearPublished}
-Tuổi sách: ${bookAge} năm
-Tổng giá trị: ${totalValue.toLocaleString('vi-VN')} VNĐ
-Ngăn kệ gợi ý: Kệ số ${shelfNumber}
-`);
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
